@@ -6,13 +6,8 @@
     -fx-font-family: Arial !important;
 }
 
-
 .txtUserName{
     -fx-text-fill: #f4f4f4;
 }
 
-/*.txtUserName:focused {*/
-/*    -fx-border-color: transparent transparent #558b2f transparent;*/
-/*    -fx-text-fill: #f4f4f4;*/
-/*}*/
 
