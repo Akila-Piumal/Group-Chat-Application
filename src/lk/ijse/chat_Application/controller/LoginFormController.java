@@ -14,6 +14,7 @@ public class LoginFormController {
     public AnchorPane loginFormContext;
 
     public void btnLoginOnAction(ActionEvent actionEvent) {
+        ChatWindowController.userName = txtUserName.getText();
         try {
             Stage stage = new Stage();
             stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../views/Chat_Window.fxml"))));

@@ -6,7 +6,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
 public class ChatWindowController {
-
+    public static String userName;
     public Label txtClientName;
     public TextField textMessage;
     public TextArea textArea;
