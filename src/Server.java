@@ -12,5 +12,17 @@ public class Server {
     public static void main(String[] args) throws IOException {
         ServerSocket serverSocket = new ServerSocket(6000);
         Server server = new Server(serverSocket);
+        server.startServer();
+    }
+
+    public void startServer(){
+        try {
+            while (!serverSocket.isClosed()) {
+                Socket socket = serverSocket.accept();
+                System.out.println("A new Client has Connected..");
+            }
+        } catch (IOException e) {
+
+        }
     }
 }
