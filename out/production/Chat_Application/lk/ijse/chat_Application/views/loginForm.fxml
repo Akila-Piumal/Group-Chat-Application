@@ -26,7 +26,7 @@
             <ColorAdjust brightness="-0.22" contrast="-0.09" />
          </effect>
       </ImageView>
-      <TextField fx:id="txtUserName" alignment="TOP_LEFT" layoutX="176.0" layoutY="311.0" promptText="User Name" style="-fx-background-color: #455a64; -fx-focus-traversable: green; -fx-background-radius: 10;">
+      <TextField fx:id="txtUserName" alignment="TOP_LEFT" layoutX="176.0" layoutY="311.0" style="-fx-background-color: #455a64; -fx-focus-traversable: green; -fx-background-radius: 10;" styleClass="txtUserName" stylesheets="@assests/styles/style.css">
          <font>
             <Font size="19.0" />
          </font>
@@ -59,5 +59,6 @@
             <Image url="@assests/images/user.png" />
          </image>
       </ImageView>
+      <Label layoutX="244.0" layoutY="290.0" opacity="0.58" text="User Name" textFill="WHITE" />
    </children>
 </AnchorPane>
