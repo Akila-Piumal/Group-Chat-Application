@@ -11,18 +11,34 @@ public class Client_Handler implements Runnable {
     private DataInputStream dataInputStream;
     private DataOutputStream dataOutputStream;
 
-    public Client_Handler(Socket socket){
-        try{
+    public Client_Handler(Socket socket) {
+        try {
             this.socket = socket;
             this.dataOutputStream = new DataOutputStream(socket.getOutputStream());
             this.dataInputStream = new DataInputStream(socket.getInputStream());
-        }catch (IOException e){
-
+        } catch (IOException e) {
+            closeEverything(socket, dataOutputStream, dataInputStream);
         }
     }
 
     @Override
     public void run() {
 
+    }
+
+    public void closeEverything(Socket socket, DataOutputStream dataOutputStream, DataInputStream dataInputStream) {
+        try {
+            if (dataOutputStream != null) {
+                dataOutputStream.close();
+            }
+            if (dataInputStream != null) {
+                dataInputStream.close();
+            }
+            if (socket != null) {
+                socket.close();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
