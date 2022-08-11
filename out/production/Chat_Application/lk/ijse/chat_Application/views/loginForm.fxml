@@ -13,23 +13,25 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="699.0" prefWidth="588.0" style="-fx-background-color: #34495e;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.chat_Application.controller.LoginFormController">
+<AnchorPane fx:id="loginFormContext" prefHeight="702.0" prefWidth="499.0" style="-fx-background-color: #263238;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.chat_Application.controller.LoginFormController">
    <children>
       <Circle fill="WHITE" layoutX="322.0" layoutY="223.0" radius="41.0" stroke="BLACK" strokeType="INSIDE" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#40739e" height="56.0" opacity="0.22" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="589.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#40739e" height="57.0" layoutY="-1.0" opacity="0.22" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="589.0" />
       <Circle fill="WHITE" layoutX="287.0" layoutY="188.0" radius="76.0" stroke="BLACK" strokeType="INSIDE" />
       <ImageView fitHeight="169.0" fitWidth="160.0" layoutX="207.0" layoutY="108.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@assests/images/login.png" />
          </image>
+         <effect>
+            <ColorAdjust brightness="-0.22" contrast="-0.09" />
+         </effect>
       </ImageView>
-      <TextField fx:id="txtUserName" alignment="TOP_CENTER" editable="false" layoutX="176.0" layoutY="311.0" promptText="User Name" style="-fx-background-radius: 20;">
+      <TextField fx:id="txtUserName" alignment="TOP_LEFT" layoutX="176.0" layoutY="311.0" promptText="User Name" style="-fx-background-color: #455a64; -fx-focus-traversable: green; -fx-background-radius: 10;">
          <font>
             <Font size="19.0" />
          </font>
       </TextField>
-      <Button layoutX="198.0" layoutY="400.0" mnemonicParsing="false" onAction="#btnLoginOnAction" opacity="0.87" prefHeight="49.0" prefWidth="193.0" style="-fx-background-color: #fab1a0; -fx-border-radius: 20; -fx-background-radius: 20;" text="Log In" textAlignment="CENTER">
+      <Button layoutX="198.0" layoutY="400.0" mnemonicParsing="false" onAction="#btnLoginOnAction" opacity="0.87" prefHeight="49.0" prefWidth="193.0" style="-fx-background-color: #718792; -fx-background-radius: 90;" text="Log In" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
@@ -37,8 +39,8 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <CubicCurve controlX1="-34.240478515625" controlX2="-168.19906616210938" controlY1="-189.0" controlY2="-359.0" endX="-501.0" endY="-10.9066162109375" fill="#40739e" layoutX="505.0" layoutY="712.0" opacity="0.22" startX="79.7930908203125" startY="-10.9066162109375" stroke="BLACK" strokeLineJoin="ROUND" strokeWidth="0.0" />
-      <ImageView fitHeight="35.0" fitWidth="42.0" layoutX="374.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+      <CubicCurve controlX1="-34.240478515625" controlX2="-168.19906616210938" controlY1="-189.0" controlY2="-359.0" endX="-501.0" endY="-10.9066162109375" fill="#455a64" layoutX="497.0" layoutY="712.0" opacity="0.17" startX="79.7930908203125" startY="-10.9066162109375" stroke="BLACK" strokeLineJoin="ROUND" strokeWidth="0.0" />
+      <ImageView fitHeight="43.0" fitWidth="47.0" layoutX="190.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@assests/images/chat.png" />
          </image>
@@ -46,11 +48,16 @@
             <ColorAdjust brightness="1.0" />
          </effect>
       </ImageView>
-      <CubicCurve controlX1="-34.240478515625" controlX2="-331.0" controlY1="-189.0" controlY2="-288.5" endX="13.0" endY="118.5" fill="#40739e" layoutX="574.0" layoutY="316.0" opacity="0.22" startX="13.0" startY="-266.0" stroke="BLACK" strokeLineJoin="ROUND" strokeWidth="0.0" />
-      <Label layoutX="204.0" layoutY="7.0" text="Play Tech Chat" textFill="WHITE">
+      <CubicCurve controlX1="-34.240478515625" controlX2="-331.0" controlY1="-189.0" controlY2="-288.5" endX="13.0" endY="118.5" fill="#455a64" layoutX="574.0" layoutY="316.0" opacity="0.17" startX="13.0" startY="-266.0" stroke="BLACK" strokeLineJoin="ROUND" strokeWidth="0.0" />
+      <Label layoutX="14.0" layoutY="11.0" text="Play Tech Chat" textFill="WHITE">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
+      <ImageView fitHeight="54.0" fitWidth="46.0" layoutX="107.0" layoutY="312.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assests/images/user.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

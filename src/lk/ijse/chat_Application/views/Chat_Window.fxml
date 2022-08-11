@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="702.0" prefWidth="499.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.chat_Application.controller.ChatWindowController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#263238" height="75.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="499.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#40739e" height="75.0" layoutY="-1.0" opacity="0.21" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="499.0" />
+      <Label fx:id="txtClientName" layoutX="92.0" layoutY="20.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="23.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="54.0" fitWidth="46.0" layoutX="27.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assests/images/user.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="textMessage" layoutX="34.0" layoutY="627.0" prefHeight="46.0" prefWidth="358.0" promptText="Write messages here..." styleClass="textBox" stylesheets="@assests/styles/style.css" />
+      <ImageView fitHeight="56.0" fitWidth="63.0" layoutX="414.0" layoutY="622.0" onMouseClicked="#sendOnAction" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assests/images/sent.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <TextArea fx:id="textArea" editable="false" layoutY="74.0" prefHeight="538.0" prefWidth="499.0" style="-fx-background-color: white;" styleClass="textArea" stylesheets="@assests/styles/style.css">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></TextArea>
+   </children>
+</AnchorPane>
