@@ -25,6 +25,21 @@ public class ChatWindowController {
             socket = new Socket("localhost", 6000);
             dataOutputStream = new DataOutputStream(socket.getOutputStream());
             dataInputStream = new DataInputStream(socket.getInputStream());
+            sendName();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void sendName() {
+        try {
+            while (socket.isConnected()) {
+                String name= userName;
+                txtClientName.setText(name);
+                dataOutputStream.writeUTF(name);
+                dataOutputStream.flush();
+                break;
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
