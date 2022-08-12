@@ -20,6 +20,9 @@ public class Server {
             while (!serverSocket.isClosed()) {
                 Socket socket = serverSocket.accept();
                 System.out.println("A new Client has Connected..");
+                Client_Handler clientHandler=new Client_Handler(socket);
+
+
             }
         } catch (IOException e) {
 
