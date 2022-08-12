@@ -19,6 +19,7 @@ public class Client_Handler implements Runnable {
             this.dataInputStream = new DataInputStream(socket.getInputStream());
 
             this.clientUserName = dataInputStream.readUTF();
+            clientHandlers.add(this);
         } catch (IOException e) {
             closeEverything(socket, dataOutputStream, dataInputStream);
         }
