@@ -28,7 +28,17 @@ public class Client_Handler implements Runnable {
 
     @Override
     public void run() {
+        String messageFromClient;
 
+        while (socket.isConnected()) {
+            try {
+                messageFromClient = dataInputStream.readUTF();
+                broadcastMessage(messageFromClient);
+            } catch (IOException e) {
+                closeEverything(socket, dataOutputStream, dataInputStream);
+                break;
+            }
+        }
     }
 
     public void broadcastMessage(String messageToSend){
