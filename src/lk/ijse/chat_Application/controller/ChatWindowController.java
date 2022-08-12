@@ -26,6 +26,7 @@ public class ChatWindowController {
             dataOutputStream = new DataOutputStream(socket.getOutputStream());
             dataInputStream = new DataInputStream(socket.getInputStream());
             sendName();
+            listenForMessage();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -47,5 +48,35 @@ public class ChatWindowController {
 
     public void sendOnAction(MouseEvent mouseEvent) {
 
+    }
+
+    public void listenForMessage() {
+        new Thread(() -> {
+            String message;
+            while (socket.isConnected()) {
+                try {
+                    message = dataInputStream.readUTF();
+                    textArea.appendText("\n" + message);
+                } catch (IOException e) {
+                    closeEverything(socket, dataOutputStream,dataInputStream);
+                }
+            }
+        }).start();
+    }
+
+    private void closeEverything(Socket socket, DataOutputStream dataOutputStream, DataInputStream dataInputStream) {
+        try {
+            if (dataOutputStream != null) {
+                dataOutputStream.close();
+            }
+            if (dataInputStream != null) {
+                dataInputStream.close();
+            }
+            if (socket != null) {
+                socket.close();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
