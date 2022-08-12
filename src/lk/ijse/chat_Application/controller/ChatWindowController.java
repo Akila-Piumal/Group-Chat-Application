@@ -47,7 +47,17 @@ public class ChatWindowController {
     }
 
     public void sendOnAction(MouseEvent mouseEvent) {
-
+        try {
+            while (socket.isConnected()) {
+                String messageToSend = textMessage.getText();
+                dataOutputStream.writeUTF(txtClientName.getText() + " : " + messageToSend);
+                textArea.appendText("\nme : " + messageToSend);
+                dataOutputStream.flush();
+                break;
+            }
+        } catch (IOException e) {
+            closeEverything(socket, dataOutputStream, dataInputStream);
+        }
     }
 
     public void listenForMessage() {
