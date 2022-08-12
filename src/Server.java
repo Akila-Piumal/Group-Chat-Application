@@ -15,14 +15,15 @@ public class Server {
         server.startServer();
     }
 
-    public void startServer(){
+    public void startServer() {
         try {
             while (!serverSocket.isClosed()) {
                 Socket socket = serverSocket.accept();
                 System.out.println("A new Client has Connected..");
-                Client_Handler clientHandler=new Client_Handler(socket);
+                Client_Handler clientHandler = new Client_Handler(socket);
 
-
+                Thread thread = new Thread(clientHandler);
+                thread.start();
             }
         } catch (IOException e) {
 
