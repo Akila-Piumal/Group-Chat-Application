@@ -10,12 +10,15 @@ public class Client_Handler implements Runnable {
     private Socket socket;
     private DataInputStream dataInputStream;
     private DataOutputStream dataOutputStream;
+    private String clientUserName;
 
     public Client_Handler(Socket socket) {
         try {
             this.socket = socket;
             this.dataOutputStream = new DataOutputStream(socket.getOutputStream());
             this.dataInputStream = new DataInputStream(socket.getInputStream());
+
+            this.clientUserName = dataInputStream.readUTF();
         } catch (IOException e) {
             closeEverything(socket, dataOutputStream, dataInputStream);
         }
