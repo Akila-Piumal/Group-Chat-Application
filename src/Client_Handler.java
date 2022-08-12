@@ -30,6 +30,19 @@ public class Client_Handler implements Runnable {
 
     }
 
+    public void broadcastMessage(String messageToSend){
+        for (Client_Handler clientHandler : clientHandlers) {
+            try {
+                if (!clientHandler.clientUserName.equals(clientUserName)) {
+                    clientHandler.dataOutputStream.writeUTF(messageToSend);
+                    clientHandler.dataOutputStream.flush();
+                }
+            } catch (IOException e) {
+                closeEverything(socket, dataOutputStream, dataInputStream);
+            }
+        }
+    }
+
     public void closeEverything(Socket socket, DataOutputStream dataOutputStream, DataInputStream dataInputStream) {
         try {
             if (dataOutputStream != null) {
