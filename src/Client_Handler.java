@@ -20,6 +20,7 @@ public class Client_Handler implements Runnable {
 
             this.clientUserName = dataInputStream.readUTF();
             clientHandlers.add(this);
+            broadcastMessage("SERVER: " + clientUserName + " has entered the chat!");
         } catch (IOException e) {
             closeEverything(socket, dataOutputStream, dataInputStream);
         }
